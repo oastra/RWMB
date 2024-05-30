@@ -2,11 +2,9 @@
 
 # Rock Wallaby Mountains Bike Club Website
 
-Bootstrap Business website for software solutions, but could easily be changed to fit any business. Dark-themed design with modals and other features.
+Bootstrap 5 website. Dark-themed design with modals and other features.
 
 <img src="./images/bike01.jpg" />
-
-> > > > > > > 2fb259e (Initial commit)
 
 ## Features
 
@@ -17,8 +15,10 @@ Bootstrap Business website for software solutions, but could easily be changed t
 - Video modal
 - Animated play button
 - Pricing grid
-- Styled modals for projects
+- Styled modals for events
 - Font awesome icons
+- Chat GPT integrated
+- Subsribe form by Mailchimp
 
 ## Usage
 
