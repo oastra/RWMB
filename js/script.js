@@ -89,17 +89,46 @@ async function sendMessage() {
 // Newsletter validation
 
 document
-  .getElementById("newsletterEmail")
-  .addEventListener("input", function () {
+  .getElementById("submitNewsletter")
+  .addEventListener("click", async function () {
     const emailInput = document.getElementById("newsletterEmail");
     const errorMessage = document.getElementById("error-message");
-
+    const successMessage = document.getElementById("success-message");
     const emailValue = emailInput.value;
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailPattern.test(emailValue)) {
       errorMessage.style.display = "block";
-    } else {
-      errorMessage.style.display = "none";
+      successMessage.style.display = "none";
+      return;
+    }
+
+    errorMessage.style.display = "none";
+
+    try {
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: emailValue }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        successMessage.style.display = "block";
+        errorMessage.style.display = "none";
+      } else {
+        errorMessage.style.display = "block";
+        errorMessage.textContent =
+          result.message || "Subscription failed. Please try again.";
+        successMessage.style.display = "none";
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      errorMessage.style.display = "block";
+      errorMessage.textContent = "Subscription failed. Please try again.";
+      successMessage.style.display = "none";
     }
   });

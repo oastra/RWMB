@@ -40,7 +40,6 @@
     <title>Welcome To Rock Wallaby Mountain Bike Club</title>
   </head>
   <body>
-    <div class="replace-me">Hello</div>
     <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
       <div class="container">
         <a class="navbar-brand" aria-label="Home page" href="#">
@@ -1012,17 +1011,30 @@
                 id="newsletterEmail"
                 class="form-control"
                 placeholder="Enter Email Address"
+                required
               />
               <button
                 class="btn btn-primary text-white rounded-0"
                 type="button"
+                id="submitNewsletter"
               >
                 Submit
               </button>
-            
             </div>
-            <p class="error-message text-danger mt-2" id="error-message" style="display: none;">Please enter a valid email address.</p>
-      </div>
+            <p
+              class="error-message text-danger mt-2"
+              id="error-message"
+              style="display: none"
+            >
+              Please enter a valid email address.
+            </p>
+            <p
+              class="success-message text-success mt-2"
+              id="success-message"
+              style="display: none"
+            >
+              Subscription successful!
+            </p>
           </div>
         </div>
       </div>
