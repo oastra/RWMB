@@ -492,6 +492,7 @@
                 type="button"
                 data-bs-slide="prev"
                 data-bs-target="#slider"
+                aria-label="Carousel-control-prev"
               >
                 <span class="carousel-control-prev-icon"></span>
                 <span class="visually-hidden">Previous</span>
@@ -501,6 +502,7 @@
                 type="button"
                 data-bs-slide="next"
                 data-bs-target="#slider"
+                aria-label="Carousel-control-next"
               >
                 <span class="carousel-control-next-icon"></span>
                 <span class="visually-hidden">Next</span>
@@ -1017,6 +1019,7 @@
                 class="btn btn-primary text-white rounded-0"
                 type="button"
                 id="submitNewsletter"
+                aria-label="Submit Newsletter"
               >
                 Submit
               </button>
@@ -1137,6 +1140,7 @@
       class="btn btn-sm btn-outline-primary to-chat-btn"
       data-bs-toggle="modal"
       data-bs-target="#chatModal"
+      aria-label="Chat"
     >
       <i class="fa-solid fa-comments fa-2x"></i>
     </button>
@@ -1173,7 +1177,9 @@
                 class="form-control"
                 placeholder="Type a message..."
               />
-              <button id="send-btn" class="btn btn-primary">Send</button>
+              <button aria-label="Send" id="send-btn" class="btn btn-primary">
+                Send
+              </button>
             </div>
           </div>
         </div>
