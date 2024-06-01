@@ -88,12 +88,12 @@ async function sendMessage() {
 
 // Newsletter validation
 
-document
-  .getElementById("submitNewsletter")
-  .addEventListener("click", async function () {
-    const emailInput = document.getElementById("newsletterEmail");
-    const errorMessage = document.getElementById("error-message");
-    const successMessage = document.getElementById("success-message");
+document.querySelectorAll(".submit-newsletter").forEach((button) => {
+  button.addEventListener("click", async function () {
+    const form = button.closest(".newsletter-form");
+    const emailInput = form.querySelector(".newsletter-email");
+    const errorMessage = form.querySelector(".error-message");
+    const successMessage = form.querySelector(".success-message");
     const emailValue = emailInput.value;
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -132,3 +132,4 @@ document
       successMessage.style.display = "none";
     }
   });
+});
